@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css"/>
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="conteiner">
+      <section>
+        <div class="content">
+          <input
+            class="button bounce-in-top"
+            onclick="pauseClip(myVideo);"
+            type="button"
+            value="Pause"
+          />
+          <input
+            class="button bounce-in-top"
+            onclick="playClip(myVideo);"
+            type="button"
+            value="Play"
+          />
+        </div>
+      </section>
+      <div class="images">
+             <div class="ina1 image-wrap"></div>    
+             <div class="ina2"></div>   
+           
+      </div>
+    </div>
+
+    <video
+      id="video-example-1"
+      controls=""
+      loop=""
+      autoplay=""
+      name="media"
+      preload="auto"
+      hidden
+    >
+      <source src="./assets/golos.mp3" type="audio/mp3"/>
+    </video>
+
+    <script>
+      //JS функции для работы с примером:
+      //остановка воспроизведения видео примера
+      function pauseClip(media) {
+        media.pause();
+      }
+
+      //старт воспроизведения видео примера
+      function playClip(media) {
+        media.play();
+      }
+
+      //Использование и демонстрация:
+      //получим медиа объект в переменную
+      var myVideo = document.getElementById("video-example-1");
+
+      //запуск функций по onclick для кнопок:
+      pauseClip(myVideo); //для кнопки "Pause"
+      playClip(myVideo); //для кнопки "Play"
+    </script>
+  </body>
+</html>
